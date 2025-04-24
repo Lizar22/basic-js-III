@@ -1,126 +1,157 @@
 // Ejercicios números
 
-function suma(num1, num2)
-{
+function suma(num1, num2) {
     console.log(num1 + num2)
 }
 suma (3, 4);
 
-function resta(num1, num2)
-{
+function resta(num1, num2) {
     console.log(num1 - num2)
 }
 resta (14, 4);
 
-function multipl(num1, num2)
-{
+function multiplicacion(num1, num2) {
     console.log(num1 * num2)
 }
-multipl (3, 4);
+multiplicacion(3, 4);
 
-function divi(num1, num2)
-{
+function divi(num1, num2) {
     console.log(num1 / num2)
 }
 divi (22, 5);
 
-function op5(base, exponente) 
-{
+function ponencia(base, exponente) {
     console.log(base ** exponente)
 }
-op5(7, 8);
+ponencia(7, 8);
 
-function op6(num1, num2)
-{
+function resto(num1, num2) {
     console.log(num1 % num2)   
 }
-op6(9, 2);
+resto(9, 2);
 
-function op7(num1)
-{
+function raiz(num1) {
     console.log(Math.sqrt(num1))   
 }
-op7(9);
+raiz(9);
 
-function op8(num1)
-{
+function valorAbsoluto(num1) {
     console.log(Math.abs(num1))   
 }
-op8(-74);
+valorAbsoluto(-74);
 
-function op9(num1)
-{
+function redondeo(num1) {
     console.log(Math.round(num1))   
 }
-op9(34.77);
+redondeo(34.77);
 
-function op10()
-{
+function numRandom() {
     console.log(Math.random())   
 }
-op10();
+numRandom();
 
 
 // Ejercicios letras
 
 suma("Hola", " caracola")
 
-function op11(text1)
-{
-    console.log(text1.length)   
+function longitud(text) {
+    console.log(text.length)   
 }
-op11("Mesas");
+longitud("Mesas");
 
-function op12(text1)
-{
-    console.log(text1.toUpperCase())   
+function mayusculas(text) {
+    console.log(text.toUpperCase())   
 }
-op12("teléfono");
+mayusculas("teléfono");
 
-function op13(text1)
-{
-    console.log(text1.toLowerCase())   
+function minusculas(text) {
+    console.log(text.toLowerCase())   
 }
-op13("TELÉFONO");
+minusculas("TELÉFONO");
 
-function op1()
-{
-    console.log()   
+function posicion(text) {
+    console.log(text.charAt(3))   
 }
-op1();
+posicion("Probando");
 
-function op1()
-{
-    console.log()   
+function invertir(text) {
+    let arrayLetras = text.split('');
+    let arrayInvertido = arrayLetras.reverse();
+    let textInvertido = arrayInvertido.join('');
+    console.log(textInvertido);   
 }
-op1();
+invertir("Patata");
 
-function op1()
-{
-    console.log()   
-}
-op1();
 
-function op1()
-{
-    console.log()   
-}
-op1();
+// Ejercicios Arrays
 
-function op1()
-{
-    console.log()   
+function sumaElementos(array) {
+    let suma = array.reduce((acumulador, valorActual) => acumulador + valorActual, 0);
+    console.log(suma);   
 }
-op1();
+let valores = [1, 2, 3, 4, 5];
+sumaElementos(valores);
 
-function op1()
-{
-    console.log()   
+function calcularPromedio(array) {
+    let suma = array.reduce((acumulador, valorActual) => acumulador + valorActual, 0);
+    const promedio = suma / array.length;
+    console.log(promedio);
 }
-op1();
+let valorArray = [30, 8, 50, 60];
+calcularPromedio(valorArray);
 
-function op1()
-{
-    console.log()   
+function ordenarArray(array) {
+    let arrayOrdenado = array.sort((acumulador, valorActual) => acumulador - valorActual);
+    console.log(arrayOrdenado);   
 }
-op1();
+let nuevoArray = [5, 8, 3, 6, 2];
+ordenarArray(nuevoArray);
+
+function arrayMayorACinco(array) {
+    let resultado = array.filter(i => i > 5);
+    console.log(resultado);   
+}
+let otroArray = [9, 2, 7, 33, 0, 87, 1];
+arrayMayorACinco(otroArray);
+
+function concatenarArray(array1, array2) {
+    let arrayConcatenado = array1.concat(array2);
+    console.log(arrayConcatenado);   
+}
+let primerArray = ["Mochila", "Estuche", "Libros"];
+let segundoArray = ["Calculadora", "Portátil", "Cascos"];
+concatenarArray(primerArray, segundoArray);
+
+
+// Ejercicios Objetos literales
+
+function devolverNombre(objeto) {
+    console.log(objeto.nombre);
+}
+const persona = { nombre: "Rania", apellido: "Lowe", edad: 34, nacionalidad: "Jordania"};
+devolverNombre(persona);
+
+function cambiarEdad (objeto, nuevaEdad) {
+    objeto.edad = nuevaEdad;
+    console.log(objeto.edad);
+}
+cambiarEdad(persona, 22);
+
+function contarPropiedades(objeto) {
+    let numeroPropiedades = Object.keys(objeto)
+    console.log(objeto);
+}
+contarPropiedades(persona);
+
+function eliminarPropiedad(objeto, propiedadABorrar) {
+    delete objeto[propiedadABorrar];
+    console.log(objeto);
+}
+eliminarPropiedad(persona, "nacionalidad");
+
+function comprobarPropiedad(objeto, propiedadAComprobar) {
+    let comprobacion = objeto.hasOwnProperty(propiedadAComprobar);
+    console.log(comprobacion);
+}
+comprobarPropiedad(persona, "edad");
